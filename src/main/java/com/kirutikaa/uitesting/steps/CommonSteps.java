@@ -25,11 +25,12 @@ public class CommonSteps {
     }
 
     public static void addOutLine(WebElement webElement){
-        javascriptExecutor.executeScript("arguments[0].style.border='3px solid white'",webElement);
+        javascriptExecutor = (JavascriptExecutor) webDriver;
+        javascriptExecutor.executeScript("arguments[0].setAttribute('style','border:3px solid black;');",webElement);
     }
 
     public static void removeOutLine(WebElement webElement){
-        javascriptExecutor.executeScript("arguments[0].style.border='none'",webElement);
+        javascriptExecutor.executeScript("arguments[0].setAttribute('style','border:3px solid black;')",webElement);
 
     }
 }
