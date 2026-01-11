@@ -19,7 +19,6 @@ public class FlightBookingGeneral {
     String title;
     @Given("^the user wants to call the flight booking site$")
     public void the_user_wants_to_call_the_flight_booking_site() throws InterruptedException {
-
         title = webDriver.getTitle();
         Thread.sleep(1000);
 
@@ -42,9 +41,9 @@ public class FlightBookingGeneral {
         Thread.sleep(1000);
 
         List<String> data_hotel = dataTable.row(1);
-        WebElement hotel = webDriver.findElement(By.xpath("//ul/li[2]/a[@title='Hotels']"));
+        WebElement hotel = webDriver.findElement(By.xpath("//ul/li[2][@class='myspice_trip']"));
         addOutLine(hotel);
-        Assert.assertEquals(data_hotel.get(1),hotel.getText());
+        Assert.assertEquals(data_hotel.get(0),hotel.getText());
         removeOutLine(hotel);
         Thread.sleep(5000);
 
