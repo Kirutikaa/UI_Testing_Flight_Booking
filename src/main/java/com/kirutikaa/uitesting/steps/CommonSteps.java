@@ -1,6 +1,7 @@
 package com.kirutikaa.uitesting.steps;
 
 import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.BeforeAll;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,7 +14,7 @@ public class CommonSteps {
 
     public static JavascriptExecutor javascriptExecutor;
 
-    @BeforeAll
+    @Before
     public static void stepDriver(){
         webDriver = new ChromeDriver();
         webDriver.get("https://rahulshettyacademy.com/dropdownsPractise/");
